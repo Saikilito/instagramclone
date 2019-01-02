@@ -1,0 +1,32 @@
+{
+  "name": "instagramclone",
+  "version": "1.0.0",
+  "description": "Clon de Instagram con Graphql, apollo, constext, node",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saikilito/instagramclone.git"
+  },
+  "author": "@Saikilito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saikilito/instagramclone/issues"
+  },
+  "homepage": "https://github.com/Saikilito/instagramclone#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.3.1",
+    "express": "^4.16.4",
+    "graphql": "^14.0.2"
+  }
+}
