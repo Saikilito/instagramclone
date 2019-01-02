@@ -4,15 +4,19 @@ import mongoose from 'mongoose';
 import models from './models';
 
 import { ApolloServer, gql } from 'apollo-server-express';
-import typeDefs from './schemas';
-import resolvers from './resolvers';
+//Mezclando types y resolvers
+import { fileLoader, mergeTypes, mergeResolvers } from 'merge-graphql-schemas';
+import path from 'path';
 
+const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './types')));
+const resolvers = mergeResolvers(fileLoader(path.join(__dirname, './resolvers')));
 
 const server = new ApolloServer({ 
   typeDefs, 
   resolvers,
   context:{
-    models
+    models,
+    user:{_id:1, username:'Kemsito'}
   }
 });
 

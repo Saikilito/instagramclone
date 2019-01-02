@@ -1,9 +1,9 @@
 import User from './users';
-// import Post from './Post';
+import Post from './posts';
 
 const models = {
     User,
-    // Post
+    Post
 }
 
 export default models ;
