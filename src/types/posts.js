@@ -1,16 +1,11 @@
 export default `
-    type UserShort {
-        _id:ID!
-        username: String!
-        thumbnail: String
-    }
     type Post{
         _id: ID!
-        by: UserShort
+        by: User
         desc:String
         photo: String
-        likeBy:[UserShort] 
-        comments:[UserShort]
+        likeBy:[User] 
+        comments:[User]
         createAt: String
     }
     type Query{

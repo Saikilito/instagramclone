@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {Grid, Image} from 'semantic-ui-react';
 
+import { Mutation } from 'react-apollo';
+
 import Signin from './login/Signin';
 import Signup from './login/Signup';
-import LostPassword from './login/LostPassword';
-
+import { ADD_USER } from './queries';
+// import LostPassword from './login/LostPassword';
 
 const style = {
     grid:{
@@ -47,8 +49,11 @@ class Login extends Component {
     handleLogin = (e, args) => {
         console.log(args)
     }
+    handleRegister = (e, args) => {
+        console.log(args);
+    }
     render() {
-        const {showLogin, showRegister, showLostPassword} = this.state;
+        const {showLogin, showRegister} = this.state;
         return (
             <Grid columns={2} style={style.grid} centered verticalAlign="middle">
                 <Grid.Row>
@@ -57,7 +62,7 @@ class Login extends Component {
                     </Grid.Column>
                     <Grid.Column>
                         {showLogin && <Signin styles={style} handleCLick={this.showRegister} handleSubmit={this.handleLogin} />}
-                        {showRegister && <Signup styles={style} handleCLick={this.showLogin} />}
+                        {showRegister && <Signup styles={style} handleCLick={this.showLogin} handleSubmit={this.handleRegister} />}
                         {/* {showLostPassword && <Signup styles={style} />} */}
                     </Grid.Column>
                 </Grid.Row>
