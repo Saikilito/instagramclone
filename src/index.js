@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 import mongoose from 'mongoose';
 import models from './models';
@@ -21,6 +22,9 @@ const server = new ApolloServer({
 });
 
 const app = express();
+app.use(cors({
+  origin:["http://localhost:3000"]
+}))
 server.applyMiddleware({ app });
 
 const port = 4000;
