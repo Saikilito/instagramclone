@@ -32,6 +32,7 @@
     "graphql": "^14.0.2",
     "merge-graphql-schemas": "^1.5.8",
     "mongoose": "^5.4.1",
+    "mongoose-validator": "^2.1.0",
     "package": "^1.0.1"
   }
 }
